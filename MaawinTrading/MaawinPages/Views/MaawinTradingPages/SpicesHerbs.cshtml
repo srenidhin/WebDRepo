@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:15%;width:69%;margin-bottom:40px;border-radius:5px;">
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color:#BA181B">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto"></ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" style="font-size:40px;color:white" href="#">Spices &#38; Herbs</a>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="srctxt" style="font-size:22px">
+                </li>
+                <li class="nav-item" style="margin-left:4px">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="search" style="font-size:22px;padding-left:20px;padding-right:20px">Search</button>
+                </li>
+            </ul>
+        </div>   
+    </nav>
+</div>
+<div id="fillPartial">
+    @{Html.RenderPartial("ProductPartialView");}
+</div>
+<script>
+    $(document).ready(function () {
+        $("#search").on("click", function () {
+            var prdName = $("#srctxt").val();
+            $.ajax({
+                url: '/MaawinTradingPages/ProductPartialView',
+                type: 'GET',
+                data: {
+                    category: "AgriProducts",
+                    type: "SpicesHerbs",
+                    src: prdName
+                },
+                success: function (response) {
+                    debugger;
+                    $("#fillPartial").html(response);
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            });
+        });
+    });
+</script>
+

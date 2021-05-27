@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>    
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .logo {
+            display: block;
+            width: 175px;
+            position:relative;
+            left:12.5%;
+            top:-40px;
+        }
+        .brandName {
+            color: #BA181B;
+            font-family: 'Ubuntu', sans-serif;
+            font-size:60px;
+            font-weight:700;
+            position:relative;
+            top:-220px;
+            left:25%;
+        }
+
+        .brandTagline{
+            color: #07002C;
+            font-family: 'Ubuntu', sans-serif;
+            font-size:40px;
+            font-weight:700;
+            position:relative;
+            top:-250px;
+            left:40%;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+            transition: 0.2s;
+        }
+           .closebtn {
+                position: relative;
+                top: 0;
+                left: 300px;
+                font-weight:900;
+                font-size:42px;
+            }
+
+            /* Style the sidenav links and the dropdown button */
+            .sidenav a, .dropdown-btn {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #818181;
+                display: block;
+                border: none;
+                background: none;
+                width: 100%;
+                text-align: left;
+                cursor: pointer;
+                outline: none;
+            }
+
+                /* On mouse-over */
+                .sidenav a:hover, .dropdown-btn:hover {
+                    color: darkorange;
+                    background-color:dimgrey
+                }
+
+        /* Main content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            font-size: 20px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        /* Add an active class to the active dropdown button */
+        .active {
+            background-color: dimgrey;
+            color: darkorange;
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: #262626;
+            padding-left: 16px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+            padding-top:4px
+        }
+        
+        .footer1{
+            font-family: 'Ubuntu', sans-serif;
+            font-weight:bold;  
+            font-size:16px;
+            padding-top:30px;
+            padding-bottom:30px;
+            margin:0            
+        }
+
+        #OpenNav{
+            font-size:30px;
+            cursor:pointer;
+            color:#BA181B;
+            position:fixed;
+            top:80px;
+            left:20px;
+            z-index:2;
+        }
+
+        #OpenNav:hover{
+            color:darkorange;
+        }
+        @@media screen and (min-width: 1400px) {
+            .brandName {
+                font-size: 80px;
+            }
+        }
+
+        @@media screen and (max-width: 1399px) {
+            .brandName {
+                left:56%;
+                font-size: 0px;
+            }
+        }
+        @@media screen and (min-width: 600px) {
+            .brandTagline {
+                font-size: 40px;
+            }
+        }
+
+        @@media screen and (max-width: 599px) {
+            .brandTagline {
+                left:56%;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body style="background-color:#F8E4DF;font-family: 'Ubuntu', sans-serif;padding:0 0" >
+    <div class="container-fluid" id="main" style="padding:0 0">
+        <span id="OpenNav">&#9776; </span>
+        <header>
+            <div >
+                <div style="padding-top:60px">
+                    <img class="logo" src="~/Resources/MWLogo_high.png" />
+                </div>
+                <div class="container-fluid" style="border:thick;border-color:white">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <label class="brandName" href="#"><span style="font-size:100px">M</span>aa<span style="font-size:100px">W</span>in Trading and Services LLP</label>
+                        </div>
+                        <div class="row">
+                            <label class="brandTagline">Trading is our passion.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div>
+            <div id="sidenavbar" class="sidenav">
+                <a class="closebtn"><span style="font-size:40px">&times;</span></a>
+                <a class="textNav" href="~/MaawinTradingPages/HomePage#image">Home</a>
+                <a class="textNav" href="~/MaawinTradingPages/HomePage#about">About Us</a>
+                <button class="dropdown-btn">
+                    Agri Products
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="~/MaawinTradingPages/SpicesHerbs">Spices &#38; Herbs</a>
+                    <a href="#">Veggies &#38; Fruits</a>
+                    <a href="#">Nuts &#38; Seeds</a>
+                </div>
+                <a class="textNav" href="#quality">Health Care products</a>
+                <a class="textNav" href="#quality">Industrial &#38; Engg. Products</a>
+                <a class="textNav" href="#xldata">Other Products</a>
+                <a class="textNav" href="#contact">Contact Us</a>
+            </div>
+        </div>
+        
+        <div style="position:relative;top:-175px;font-family: 'Ubuntu', sans-serif;">
+
+            @RenderBody()
+
+        </div>
+        <footer style="width:100%;background-color:#BA181B;margin:0;padding:0;color:white">
+            <div class="footer1">
+                <div class="row">
+                    <div class="col-md-4" style="margin-left:15%">
+                        <label style="font-size:28px;font-weight:800">Reach out to us</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4" style="margin-left:15%" id="contact">
+                        <label style="position:relative;left:2px;">
+                            MAAWIN TRADING AND SERVICES LLP<br />
+                            2/8, 14th street, Aiyappa nagar, <br />
+                            Madipakkam, Chennai,<br />
+                            Tamilnadu, India – 600091<br />
+                        </label>
+                    </div>
+                    <div class="col-md-2" style="margin-left:15%">
+                        <label style="">
+                            @*Phone: +91-79040 71860<br />*@
+                            Office 1: +91-63747 11726<br />
+                            Office 2: +91-63747 15023<br />
+                            E-mail: sales@maawintrading.com<br />
+                            Website: <a href="#">maawintrading.com</a><br />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $("#OpenNav").on("click", function () {
+                $("#sidenavbar").css({ "width": "350px" });
+                $("#main").css({ "margin-left": "350px" });
+                
+            });
+
+            $(".closebtn").on("click", function () {
+                $("#sidenavbar").css({ "width": "0px" });
+                $("#main").css({ "margin-left": "0px" });
+            });
+
+
+        });
+        
+    </script>
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>

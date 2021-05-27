@@ -1,0 +1,196 @@
+﻿@using System.IO
+@using MaawinPages.Models
+@model ProductModel
+@{
+    ViewBag.Title = "ProductAddPage";
+}
+<style>
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    input{
+        color:black
+    }
+
+    select{
+        color:black;
+        width:100%;
+    }
+    textarea{
+        width:100%;
+        color:black
+    }
+</style>
+@using (@Html.BeginForm("ProductAddPage", "MaawinTradingPages", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="container" style="color:white;font-size:22px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" style="font-size:28px">Product Add Page</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/MaawinTradingPages/ProductDeletePage">Product Delete Page</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-danger my-2 my-sm-0" id="logout">Log Out</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="col-md-6">
+            <div class="row">
+                <p><input type="file" accept="image/*" name="image" id="file1" onchange="loadFile(event,this)" style="display: none;"></p>
+                <p><label for="file1" style="cursor: pointer;">Upload Image</label></p>
+                <p><img id="output" style="width:90%" /></p>                
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-25">
+                    <label>Name</label>
+                </div>
+                <div class="col-75">
+                    @Html.TextBoxFor(m => m.pName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Code</label>
+                </div>
+                <div class="col-75">
+                    @Html.TextBoxFor(m => m.pCode)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Category</label>
+                </div>
+                <div class="col-75">
+                    @Html.DropDownListFor(m => m.pCategory, new SelectList(Enum.GetValues(typeof(Category))), "Select Category", new { @id = "Category" })
+                </div>
+            </div>
+            <div class="row" id="type" hidden>
+                <div class="col-25">
+                    <label>Type</label>
+                </div>
+                <div class="col-75" >
+                    <select id="drpdwn"></select>
+                    @Html.TextBoxFor(m=>m.pType, new { @id = "typetxtbox", @class = "hidden" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Quantity</label>
+                </div>
+                <div class="col-75">
+                    @Html.TextBoxFor(m => m.pQuantity)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Description</label>
+                </div>
+                <div class="col-75">
+                    @Html.TextAreaFor(m => m.pDesc)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                </div>
+                <div class="col-75">
+                    <input type="submit" id="submit" class="btn btn-primary" style="width:100%;height:40px;margin-bottom:8px;font-size:20px"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                </div>
+                <div class="col-75">
+                    <label>@ViewBag.Message</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<script>
+    $(document).ready(function () {
+        $("#Category").prop("selectedIndex", 0);
+        $('body').on("change", "#Category", function () {
+            $("#drpdwn").html("");
+            var val = $(this).find(":selected").text();
+            var Enumerators = "";
+            if (val == "AgriProducts") {
+                Enumerators = JSON.parse('@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Enum.GetValues(typeof(AgriProducts)),
+
+                                 new Newtonsoft.Json.Converters.StringEnumConverter()))');
+                }
+            else if (val == "HealthCareEquipments") {
+                Enumerators = JSON.parse('@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Enum.GetValues(typeof(HealthCareEquipments)),
+
+                                 new Newtonsoft.Json.Converters.StringEnumConverter()))');
+                }
+            else {
+                Enumerators = JSON.parse('@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Enum.GetValues(typeof(ChemicalsEnggProducts)),
+
+                                 new Newtonsoft.Json.Converters.StringEnumConverter()))');
+                }
+            $('#drpdwn').append('<option value="" selected disabled hidden>Choose Type</option>')
+                for (var x = 0; x < Enumerators.length; x++) {
+                    var option = Enumerators[x];
+                    $('#drpdwn').append('<option value="' + x + '">' + option + '</option>')
+                }
+                $("#type").removeAttr('hidden');
+        });
+        $('body').on("change", "#drpdwn", function () {
+            debugger;
+            var val1 = $(this).find(":selected").text();
+            $("#typetxtbox").val(val1);
+        });
+        $("#logout").on('click', function () {
+            $.ajax({
+                url: '/MaawinTradingPages/Logout',
+                type: 'GET',
+                data: {
+
+                },
+                success: function () {
+                    location.reload(true);
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            });
+        });
+    });
+</script>
+<script>
+    var loadFile = function (event,fld) {
+        debugger;
+        if (!/(\.bmp|\.jpg|\.jpeg)$/i.test(fld.value)) {
+            alert("Invalid image file type.");
+            fld.form.reset();
+            fld.focus();
+            return false;
+        }
+        var image = document.getElementById('output');
+        let img = new Image()
+        img.src = window.URL.createObjectURL(event.target.files[0])
+        img.onload = () => {
+            if (img.width < 1024 || img.height < 584) {
+                alert("Image too small, Upload Image with size greater than or equal to 1024*584")
+                image.src = "";
+            }
+        }
+        image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>

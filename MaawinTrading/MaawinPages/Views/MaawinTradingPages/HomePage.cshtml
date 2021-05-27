@@ -1,0 +1,234 @@
+﻿
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<style>
+    .mySlides {
+        display: none;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width:75%;
+        margin-left:12.5%;
+        margin-right:12.5%; 
+        position: relative;
+        overflow:hidden;    
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        font-weight: bold;
+        font-size: 24px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+    /* Caption text */
+    .text2 {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 9px 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+
+    }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        animation-fill-mode:forwards;
+    }
+
+    @@-webkit-keyframes fade {
+        from {
+            opacity: .4;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @@keyframes fade {
+        from {
+            opacity: .4;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @@media only screen and (max-width: 300px) {
+        .prev, .next, .text {
+            font-size: 11px;
+        }
+    }
+        .details{
+            position:relative;
+            color:#BA181B;
+            font-family:'Ubuntu', sans-serif;
+            text-align:center
+        }
+
+    html {
+     overflow-y:scroll;
+    }
+</style>
+<div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-3 form-inline" style="margin-left:11%;padding-bottom:10px">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="srctxt" style="font-size:22px"/>
+            <button class="btn btn-outline-success my-2 my-sm-0" id="search" style="margin-left:4px;padding-left:20px;padding-right:20px;font-size:22px">Search</button>
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <section id="image">
+            <div id="slideshow">
+                <div class="mySlides fade">
+                    <img src="~/Resources/1535061803504.jpg" style="width:100% ;height:600px; object-fit:none;"/>
+                </div>
+                <div class="mySlides fade">
+                    <img src="~/Resources/Must-have-medical-supplies-for-healthcare-providers.jpg" style="width:100% ;height:600px; object-fit:cover ;"/>
+                </div>
+                <div class="mySlides fade">
+                    <img src="~/Resources/fridge.jpg" style="width:100% ;height:600px; object-fit:none;"/>
+                </div>
+                <div class="mySlides fade">
+                    <img src="~/Resources/home-mg-1.jpg" style="width:100% ;height:600px; object-fit:cover;" />
+                </div>
+                <a class="prev" style="color:#BA181B">&#10094;</a>
+                <a class="next" style="color:#BA181B">&#10095;</a>
+            </div>
+        </section>
+        <div style="text-align:center">
+            <span class="dot" id="img_1"></span>
+            <span class="dot" id="img_2"></span>
+            <span class="dot" id="img_3"></span>
+            <span class="dot" id="img_4"></span>
+        </div>
+    </div>
+    <div class="details">
+        <section id="about">
+            <div class="container">
+                <div>
+                    <div>
+                        <label style="font-weight:900;font-size:28px;">Welcome To</label><br />
+                        <label style="font-weight:800;font-size:36px;">MAAWIN TRADING</label>
+                    </div>
+                    <div style="text-align:justify;font-family:'Ubuntu', sans-serif;">
+                        <p style="font-size:22px">
+                            MAAWIN TRADING INDIA PRIVATE LIMITED Maawin trading and services LLP., Is located in Chennai originally known as Madras was founded in 1639  by the British East India Company was granted land to build a trading settlement. From then it prevails to be the one of the important business hub of the country providing all the facilities for a perfect business.
+                        </p>
+                        <p style="font-size:22px">
+                            In 2021 Maawin trading and services LLP. was established in Chennai, Tamilnadu, India by a group of educated and experienced professionals to serve the needs of various Agricultural products; Health Care Products; Medical, Scientific, Laboratory, Educational Products; Industrial Products, Chemical, Mechanical, Civil Engineering Products, IT & Computer related Products.
+                            Our items are fundamentally intended to match with the customers expectation in terms of quality and pricing. The main focus of the company is to deliver reliable quality products worldwide in the field of agricultural and food products; Lab, medical, educational and engineering products;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section id="quality">
+            <div>
+                <div>
+                    <div style="font-family:'Ubuntu', sans-serif;text-align:center">
+                        @*<label style="font-weight:900;font-size:28px;color:#BA181B;position:relative;padding-bottom:30px">Our Morals</label>*@
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        debugger;
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function showSlides(n) {
+            $(".mySlides").each(function () {
+                $(this).css('display', 'none');
+            });
+            $(".dot").each(function () {
+                $(this).removeClass('active');
+            });
+            $(".mySlides").eq(n-1).css('display', 'block');
+            $(".dot").eq(n-1).addClass("active");
+        }
+
+        $(".next").on('click', function () {
+            var count = $(".mySlides").length;
+            slideIndex = (slideIndex + 1) % count;
+            showSlides(slideIndex);
+        });
+        $(".prev").on('click', function () {
+            var count = $(".mySlides").length;
+            slideIndex = (slideIndex - 1) % count;
+            showSlides(slideIndex);
+        });
+        $(".dot").on("click", function () {
+            debugger;
+            var id = $(this).attr('id');
+            id = id.substr(4);
+            id = parseInt(id);
+            slideIndex = id;
+            showSlides(slideIndex);
+        });
+        $("#search").on('click', function () {
+            var prdName = $("#srctxt").val();
+            window.location = "SearchPage?srctext=" + prdName;
+        });
+    });
+</script>
+
+
