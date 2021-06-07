@@ -10,9 +10,8 @@
 
     /* Slideshow container */
     .slideshow-container {
-        max-width:75%;
-        margin-left:12.5%;
-        margin-right:12.5%; 
+        max-width:100%;
+        height:auto;
         position: relative;
         overflow:hidden;    
     }
@@ -69,9 +68,7 @@
 
     }
 
-        .active, .dot:hover {
-            background-color: #717171;
-        }
+        
 
     /* Fading animation */
     .fade {
@@ -108,6 +105,24 @@
             font-size: 11px;
         }
     }
+    @@media screen and (min-width: 768px) {
+            #searchOption{
+
+            }
+            #promotext{
+                margin-left:25%
+            }
+        }
+
+        @@media screen and (max-width: 767px) {
+            #searchOption{
+                margin-left:5%;
+            }           
+            #promotext{
+                margin-left:5%;
+                margin-right:10%;
+            } 
+        }
         .details{
             position:relative;
             color:#BA181B;
@@ -120,27 +135,27 @@
     }
 </style>
 <div>
-    <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-3 form-inline" style="margin-left:11%;padding-bottom:10px">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="srctxt" style="font-size:22px"/>
-            <button class="btn btn-outline-success my-2 my-sm-0" id="search" style="margin-left:4px;padding-left:20px;padding-right:20px;font-size:22px">Search</button>
+    <div class="row" style="background-color:darkorange;padding-top:5px;margin-bottom:5px">
+        <div class="col-md-8" style="text-align:justify;"><label style="font-size:25px;color:#07002c" id="promotext">Your favorite products made affordable for you with deals made especially for you</label></div>
+        <div class="col-md-3 form-inline" style="padding-bottom:10px" id="searchOption">            
+            <input class="form-control" type="text" placeholder="Our Products" aria-label="Search" id="srctxt" style="font-size:22px"/>
+            <button class="btn btn-success my-2 my-sm-0" id="search" style="margin-left:4px;padding-left:20px;padding-right:20px;font-size:22px">Search</button>
         </div>
     </div>
     <div class="slideshow-container">
         <section id="image">
             <div id="slideshow">
                 <div class="mySlides fade">
-                    <img src="~/Resources/1535061803504.jpg" style="width:100% ;height:600px; object-fit:none;"/>
+                    <img src="~/Resources/1535061803504.jpg" style="width:100% ;max-height:600px;height:auto; object-fit:cover;"/>
                 </div>
                 <div class="mySlides fade">
-                    <img src="~/Resources/Must-have-medical-supplies-for-healthcare-providers.jpg" style="width:100% ;height:600px; object-fit:cover ;"/>
+                    <img src="~/Resources/Must-have-medical-supplies-for-healthcare-providers.jpg" style="width:100% ;max-height:600px;height:auto; object-fit:cover ;"/>
                 </div>
                 <div class="mySlides fade">
-                    <img src="~/Resources/fridge.jpg" style="width:100% ;height:600px; object-fit:none;"/>
+                    <img src="~/Resources/fridge.jpg" style="width:100% ;max-height:600px;height:auto; object-fit:cover;"/>
                 </div>
                 <div class="mySlides fade">
-                    <img src="~/Resources/home-mg-1.jpg" style="width:100% ;height:600px; object-fit:cover;" />
+                    <img src="~/Resources/home-mg-1.jpg" style="width:100% ;max-height:600px;height:auto; object-fit:cover;" />
                 </div>
                 <a class="prev" style="color:#BA181B">&#10094;</a>
                 <a class="next" style="color:#BA181B">&#10095;</a>
@@ -161,13 +176,18 @@
                         <label style="font-weight:900;font-size:28px;">Welcome To</label><br />
                         <label style="font-weight:800;font-size:36px;">MAAWIN TRADING</label>
                     </div>
-                    <div style="text-align:justify;font-family:'Ubuntu', sans-serif;">
+                    <div style="text-align:justify;font-family:'Ubuntu', sans-serif;font-weight:500">
                         <p style="font-size:22px">
-                            MAAWIN TRADING INDIA PRIVATE LIMITED Maawin trading and services LLP., Is located in Chennai originally known as Madras was founded in 1639  by the British East India Company was granted land to build a trading settlement. From then it prevails to be the one of the important business hub of the country providing all the facilities for a perfect business.
+                            “MaaWin Trading and Services LLP”, a technical trading firm founded by an association of skilled, affluent, and qualified professionals prevailing from the Agricultural, Health, and Industrial sectors  with its head being situated in Chennai, Tamil Nadu originally known  as “Madras” by the British Business & trading group -  British East India Company, who  had their main trading activities in & around Chennai from 1639. Chennai being one of the most prominent business and trading hubs of India provides the most suited environment for business and keeping this in mind the company choose its headquarters. We at MaaWin Trading and Services LLP consider accessibility and reliability as the key aspect of our business.
                         </p>
                         <p style="font-size:22px">
-                            In 2021 Maawin trading and services LLP. was established in Chennai, Tamilnadu, India by a group of educated and experienced professionals to serve the needs of various Agricultural products; Health Care Products; Medical, Scientific, Laboratory, Educational Products; Industrial Products, Chemical, Mechanical, Civil Engineering Products, IT & Computer related Products.
-                            Our items are fundamentally intended to match with the customers expectation in terms of quality and pricing. The main focus of the company is to deliver reliable quality products worldwide in the field of agricultural and food products; Lab, medical, educational and engineering products;
+                            The company endeavors to widen its trading business and be accessible to global customers. With the motto of “Trading is our Passion”, the company strives to cater to the needs of diverse customers relating Agricultural products; Health Care Products, Medical, Scientific, Laboratory, Educational Products, Industrial Products, Chemical, Mechanical, Civil Engineering Products, IT & Computer related Products. We hold a broad and diverse range of products procured locally & globally available at the Chennai hub chosen based on the parameters of enterprise experience, market credentials, on-time delivery, and high-grade financial position.We focus on not just delivering products but to provide our customers a complete shopping experience. 
+                        </p>
+                        <p style="font-size:22px">
+                            We at MaaWin Trading and Services LLP believe that,The effort brings fortune's sure increase, Its absence brings to nothingness and prioritizes the satisfaction of the customer furthermore ensure that the benefit of the customer is protected. We passionately work with the intent to match the expectations of the customer in terms of quality, cost, and our services. The company finds its roots in the tradition and follows the two words "Try and spread" from the most enriching and most generous book, ''Thirukural''. To make a difference in our products and services, to keep in the vanguard the satisfaction and trust of our buyers and manufacturing companies, and in near future to move forward with our new products and services.
+                        </p>
+                        <p style="font-size:22px">
+                            The details of the services provided and products are present in the below section, feel free to contact  us for any queries and services.Thank GOD for all the Mercirs and our utmost gratitude to all our customers.
                         </p>
                     </div>
                 </div>

@@ -222,8 +222,10 @@
     <Content Include="Resources\1535061803504.jpg" />
     <Content Include="Resources\fridge.jpg" />
     <Content Include="Resources\home-mg-1.jpg" />
+    <Content Include="Resources\Logo.png" />
     <Content Include="Resources\Must-have-medical-supplies-for-healthcare-providers.jpg" />
     <Content Include="Resources\MWLogo_high.png" />
+    <Content Include="Resources\slice1.png" />
     <Content Include="Resources\spices_hero.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />

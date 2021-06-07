@@ -9,6 +9,7 @@
       float: left;
       width: 25%;
       margin-top: 6px;
+      color:#07002C
     }
 
     .col-75 {
@@ -29,28 +30,45 @@
         width:100%;
         color:black
     }
+
+    #linkdelPage{
+        color:#07002C;
+        font-weight:600
+    }
+
+    #linkdelPage:hover{
+        color:darkorange;
+    }
+
+    #uploadImageLabel{
+        color:#07002C;
+    }
+
+    #uploadImageLabel:hover{
+        color:darkorange;
+    }
 </style>
 @using (@Html.BeginForm("ProductAddPage", "MaawinTradingPages", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 <div class="container" style="color:white;font-size:22px">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#" style="font-size:28px">Product Add Page</a>
+        <a class="navbar-brand" href="#" style="font-size:28px;color:darkred;font-weight:800">Product Add Page</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/MaawinTradingPages/ProductDeletePage">Product Delete Page</a>
+                    <a class="nav-link" href="/MaawinTradingPages/ProductDeletePage" id="linkdelPage">Product Delete Page</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-danger my-2 my-sm-0" id="logout">Log Out</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" id="logout" style="font-size:22px">Log Out</button>
             </form>
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="col-md-6">
+        <div class="col-md-6" >
             <div class="row">
                 <p><input type="file" accept="image/*" name="image" id="file1" onchange="loadFile(event,this)" style="display: none;"></p>
-                <p><label for="file1" style="cursor: pointer;">Upload Image</label></p>
+                <p><label for="file1" style="cursor: pointer;" id="uploadImageLabel">Upload Image</label></p>
                 <p><img id="output" style="width:90%" /></p>                
             </div>
         </div>
@@ -60,7 +78,7 @@
                     <label>Name</label>
                 </div>
                 <div class="col-75">
-                    @Html.TextBoxFor(m => m.pName)
+                    @Html.TextBoxFor(m => m.pName, new { })
                 </div>
             </div>
             <div class="row">

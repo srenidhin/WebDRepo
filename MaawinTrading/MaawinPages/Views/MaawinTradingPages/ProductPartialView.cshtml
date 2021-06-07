@@ -207,12 +207,12 @@
         font-size: 20px;
         padding: 15px;
         border: solid;
-        color: white;
+        color: darkred;
         margin: 5px;
     }
 
         .pagination a:hover {
-            color: #1b1717;
+            color: #F8E4DF;
             background-color: darkorange;
             text-decoration: none;
         }
@@ -235,7 +235,7 @@
         foreach (var row in Model)
         {
             <section>
-                <div class="col-md-4">
+                <div class="col-md-4" >
                     <div class="container1">
                         <div class="post">
                             <div class="header_post">
@@ -284,7 +284,7 @@
         <div class="pagination">
             <a id="first" href="#">First</a>
             <a id="prev" href="#">Prev</a>
-            <span style="border:solid;color:white;padding: 16px 16px;"><input style="width:30px;color:black;font-size:20px" type="text" id="PageNo" value="1" readonly /><label style="margin-left:5px;font-size:20px" id="disp"></label></span>
+            <span style="border:solid;color:darkred;padding: 16px 16px;"><input style="width:30px;color:black;font-size:20px" type="text" id="PageNo" value="1" readonly /><label style="margin-left:5px;font-size:20px" id="disp"></label></span>
             <a id="next" href="#">Next</a>
             <a id="last" href="#">Last</a>
         </div>

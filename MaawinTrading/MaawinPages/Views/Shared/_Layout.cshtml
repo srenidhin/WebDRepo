@@ -46,7 +46,7 @@
             z-index: 3;
             top: 0;
             left: 0;
-            background-color: #111;
+            background-color: darkorange;
             overflow-x: hidden;
             padding-top: 20px;
             transition: 0.2s;
@@ -64,7 +64,7 @@
                 padding: 6px 8px 6px 16px;
                 text-decoration: none;
                 font-size: 20px;
-                color: #818181;
+                color: #07002C;
                 display: block;
                 border: none;
                 background: none;
@@ -72,12 +72,13 @@
                 text-align: left;
                 cursor: pointer;
                 outline: none;
+                font-weight:800;
             }
 
                 /* On mouse-over */
                 .sidenav a:hover, .dropdown-btn:hover {
                     color: darkorange;
-                    background-color:dimgrey
+                    background-color:#F8E4DF;
                 }
 
         /* Main content */
@@ -89,14 +90,18 @@
 
         /* Add an active class to the active dropdown button */
         .active {
-            background-color: dimgrey;
             color: darkorange;
+            background-color:#F8E4DF;
+        }
+
+        .active, .dot:hover {
+            background-color: #F8E4DF;
         }
 
         /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
         .dropdown-container {
             display: none;
-            background-color: #262626;
+            background-color: #F8E4DF;
             padding-left: 16px;
         }
 
@@ -155,13 +160,15 @@
         }
     </style>
 </head>
-<body style="background-color:#F8E4DF;font-family: 'Ubuntu', sans-serif;padding:0 0" >
+<body style="background-color:#fdd5b1;font-family: 'Ubuntu', sans-serif;padding:0 0;margin:0 0" >
     <div class="container-fluid" id="main" style="padding:0 0">
         <span id="OpenNav">&#9776; </span>
         <header>
             <div >
                 <div style="padding-top:60px">
-                    <img class="logo" src="~/Resources/MWLogo_high.png" />
+                    <img class="logo" src="~/Resources/Logo.png" />
+                    @*<img class="logo" src="~/Resources/slice1.png" />*@
+                    @*<img class="logo" src="~/Resources/MWLogo_high.png" />*@
                 </div>
                 <div class="container-fluid" style="border:thick;border-color:white">
                     <div class="col-md-12">
@@ -196,16 +203,16 @@
             </div>
         </div>
         
-        <div style="position:relative;top:-175px;font-family: 'Ubuntu', sans-serif;">
+        <div style="position:relative;top:-210px;font-family: 'Ubuntu', sans-serif;">
 
             @RenderBody()
 
         </div>
-        <footer style="width:100%;background-color:#BA181B;margin:0;padding:0;color:white">
+        <footer style="width:100%;background-color:darkorange ;margin:0;padding:0;color:#07002C;">
             <div class="footer1">
                 <div class="row">
                     <div class="col-md-4" style="margin-left:15%">
-                        <label style="font-size:28px;font-weight:800">Reach out to us</label>
+                        <label style="font-size:28px;font-weight:800;color:darkred">Reach out to us</label>
                     </div>
                 </div>
                 <div class="row">
